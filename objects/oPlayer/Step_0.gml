@@ -1,10 +1,14 @@
 /// @description Core logic
 
 // Get player inputs
-key_left = keyboard_check(vk_left)
-key_right = keyboard_check(vk_right)
+key_left = keyboard_check(ord("A")) or keyboard_check(vk_left)
+key_right = keyboard_check(ord("D")) or keyboard_check(vk_right)
 key_jump = keyboard_check_pressed(vk_space)
+key_pause = keyboard_check_pressed(vk_escape)
 
+if (key_pause) {
+	global.paused = true
+}
 
 // Movement 
 var _move = key_right - key_left;
