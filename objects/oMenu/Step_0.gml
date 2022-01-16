@@ -1,6 +1,6 @@
 /// @description Menu logic
 
-if (!global.paused) {
+if (not global.paused) {
 	exit
 }
 

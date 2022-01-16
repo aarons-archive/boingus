@@ -1,6 +1,6 @@
 /// @description Menu drawing
 
-if (!global.paused) {
+if (not global.paused) {
 	exit
 }
 
