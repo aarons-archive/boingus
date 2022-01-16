@@ -2,6 +2,7 @@
   "resources": [
     {"id":{"name":"sPlayerIdle","path":"sprites/sPlayerIdle/sPlayerIdle.yy",},"order":0,},
     {"id":{"name":"tsClouds","path":"tilesets/tsClouds/tsClouds.yy",},"order":0,},
+    {"id":{"name":"sClouds","path":"sprites/sClouds/sClouds.yy",},"order":4,},
     {"id":{"name":"change_resolution","path":"scripts/change_resolution/change_resolution.yy",},"order":8,},
     {"id":{"name":"sInvisibleWall","path":"sprites/sInvisibleWall/sInvisibleWall.yy",},"order":2,},
     {"id":{"name":"resume_game","path":"scripts/resume_game/resume_game.yy",},"order":4,},
