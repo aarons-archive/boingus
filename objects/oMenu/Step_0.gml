@@ -6,7 +6,7 @@ if (not global.paused) {
 
 up_key = keyboard_check_pressed(vk_up)
 down_key = keyboard_check_pressed(vk_down)
-enter_key = keyboard_check_pressed(vk_enter);
+enter_key = keyboard_check_pressed(vk_enter)
 
 var menu = menus[page]					// Get the current menu page.
 var menu_height = ds_grid_height(menu)	// Get the amount of elements in the menu page.
@@ -42,7 +42,7 @@ if (enter_key) {
 			script_execute(menu[# 2, selected_elements[page]])
 			break
 		case element.change_page:
-			page = menu[# 2, selected_elements[page]];
+			page = menu[# 2, selected_elements[page]]
 			break
 
 		case element.shift:

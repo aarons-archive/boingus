@@ -1,7 +1,11 @@
-/// @description Create key variables
+/// @description Create variables
 
-_horizontal_speed = 0;
-_vertical_speed = 0;
-_gravity = 0.3;
-_walk_speed = 4;
-_jump_speed = 6;
+
+///////////
+// Vars //
+/////////
+_horizontal_distance	= 0
+_vertical_distance		= 0
+_gravity				= 0.3
+_move_speed				= 4
+_jump_height			= 7

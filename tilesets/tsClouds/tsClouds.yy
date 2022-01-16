@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "oClouds",
-    "path": "sprites/oClouds/oClouds.yy",
+    "name": "sCloudsTileSet",
+    "path": "sprites/sCloudsTileSet/sCloudsTileSet.yy",
   },
   "tileWidth": 32,
   "tileHeight": 32,
