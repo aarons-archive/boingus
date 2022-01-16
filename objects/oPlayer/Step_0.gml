@@ -35,7 +35,9 @@ _horizontal_distance = _move * _move_speed
 // key, in which case, decrease the vertical distance by 
 // the jump height which will move them upwards.
 _vertical_distance += _gravity
-if (place_meeting(x + 1, y + 1, oInvisibleWall)) and (_jump_key) {
+_can_jump -= 1
+
+if (_jump_key and _can_jump > 0) {
 	_vertical_distance = -_jump_height
 }
  
@@ -71,4 +73,8 @@ if (_horizontal_distance == 0) {
 } else {
 	sprite_index = sPlayerWalk
 	image_xscale = sign(_horizontal_distance)
+}
+
+if (place_meeting(x, y + 1, oInvisibleWall)) {
+	_can_jump = 10
 }
