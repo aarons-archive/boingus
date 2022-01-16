@@ -7,7 +7,6 @@
     {"id":{"name":"resume_game","path":"scripts/resume_game/resume_game.yy",},"order":4,},
     {"id":{"name":"create_menu","path":"scripts/create_menu/create_menu.yy",},"order":0,},
     {"id":{"name":"oMenu","path":"objects/oMenu/oMenu.yy",},"order":3,},
-    {"id":{"name":"max_nested_array_length","path":"scripts/max_nested_array_length/max_nested_array_length.yy",},"order":3,},
     {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},"order":0,},
     {"id":{"name":"change_difficulty","path":"scripts/change_difficulty/change_difficulty.yy",},"order":7,},
     {"id":{"name":"exit_game","path":"scripts/exit_game/exit_game.yy",},"order":5,},

@@ -1,6 +1,9 @@
 function create_menu(elements) {
 	
-	var width = max_nested_array_length(elements)
+	var width = 0;
+	for (var i = 0; i < array_length(elements); i++) {
+		width = max(width, array_length(elements[i]))
+	}
 	var height = array_length(elements)
 
 	var grid_id = ds_grid_create(width, height)
