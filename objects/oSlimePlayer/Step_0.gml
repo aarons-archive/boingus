@@ -95,5 +95,8 @@ y += _vertical_distance
 ///////////////
 
 if (_horizontal_distance != 0) {
+	sprite_index = sSlimeMoving
 	image_xscale = _right_key - _left_key
+} else {
+	sprite_index = sSlimeIdleSpecial
 }

@@ -1,13 +1,13 @@
 {
   "spriteId": {
-    "name": "sSlime",
-    "path": "sprites/sSlime/sSlime.yy",
+    "name": "sSlimeIdle",
+    "path": "sprites/sSlimeIdle/sSlimeIdle.yy",
   },
   "solid": false,
   "visible": true,
   "spriteMaskId": {
-    "name": "sSlime",
-    "path": "sprites/sSlime/sSlime.yy",
+    "name": "sSlimeIdle",
+    "path": "sprites/sSlimeIdle/sSlimeIdle.yy",
   },
   "persistent": false,
   "parentObjectId": null,
