@@ -18,7 +18,7 @@ else if (_pause_key and global.paused) {
 // Distance calculations //
 //////////////////////////
 _left_key = keyboard_check(ord("A"))
-_right_key = keyboard_check(ord("Ddddd d"))
+_right_key = keyboard_check(ord("D"))
 
 _horizontal_distance = (_right_key - _left_key) * _move_speed
 _vertical_distance += _gravity
@@ -27,14 +27,13 @@ _vertical_distance += _gravity
 //////////////
 // Jumping //
 ////////////
-
 if (place_meeting(x, y + 1, oInvisibleWall)) {
 	_on_ground = true
 } else {
 	_on_ground = false
 }
 
-// Coyote time //
+// Coyote time
 if (not _on_ground) {
 	
 	if (_coyote_counter > 0) {
@@ -52,12 +51,10 @@ if (not _on_ground) {
 	_coyote_counter = _coyote_max
 }
 
-
-// Jump buffer //
+// Jump buffer
 if (keyboard_check_pressed(vk_space)) {
 	_buffer_counter = _buffer_max
 }
-
 if (_buffer_counter > 0) {
 	
 	_buffer_counter -= 1
@@ -74,7 +71,7 @@ if (_buffer_counter > 0) {
 // Collisions //
 ///////////////
 
-// Horizontal //
+// Horizontal
 if (place_meeting(x + _horizontal_distance, y, oInvisibleWall)) {
 	while (not place_meeting(x + sign(_horizontal_distance), y, oInvisibleWall)) {
 		x += sign(_horizontal_distance)
@@ -83,7 +80,7 @@ if (place_meeting(x + _horizontal_distance, y, oInvisibleWall)) {
 }
 x += _horizontal_distance
 
-// Vertical //
+// Vertical
 if (place_meeting(x, y + _vertical_distance, oInvisibleWall)) {
 	while (not place_meeting(x, y + sign(_vertical_distance), oInvisibleWall)) {
 		y += sign(_vertical_distance)
