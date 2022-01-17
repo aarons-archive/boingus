@@ -64,7 +64,7 @@ for (var i = 0; i < menu_height; i++) {
 		)
 	} else {
 		menu_name_x_offset = 0
-		draw_set_color(c_red)
+		draw_set_color(menu_option_colour)
 	}
 	
 	draw_text_transformed(

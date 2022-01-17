@@ -30,15 +30,26 @@ if (_pause_key and not global.paused) {
 var _move = _right_key - _left_key
 _horizontal_distance = _move * _move_speed
 
-// Increase vertical distance by the gravity which will move
-// the player down, but then check if they press the jump 
-// key, in which case, decrease the vertical distance by 
-// the jump height which will move them upwards.
+// Increase vertical distance by the gravity which will 
+// move the player down
 _vertical_distance += _gravity
-_can_jump -= 1
 
-if (_jump_key and _can_jump > 0) {
+// For every step event, minus 1 from the jump_buffer which
+// allows for a short period of time in which the player can
+// still jump after losing contact with the floor.
+_jump_buffer -= 1
+
+// Decrease the vertical distance so that the player will move
+// up, only if they have pressed the jump key and they still 
+// have frames remaining in the jump buffer.
+if (_jump_key and _jump_buffer > 0) {
 	_vertical_distance = -_jump_height
+}
+
+// If the player is in contact with the floor, reset the jump
+// buffer as they should be allowed to jump.
+if (place_meeting(x, y + 1, oInvisibleWall)) {
+	_jump_buffer = 10
 }
  
  
@@ -73,8 +84,4 @@ if (_horizontal_distance == 0) {
 } else {
 	sprite_index = sPlayerWalk
 	image_xscale = sign(_horizontal_distance)
-}
-
-if (place_meeting(x, y + 1, oInvisibleWall)) {
-	_can_jump = 10
 }

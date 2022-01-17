@@ -9,4 +9,4 @@ _vertical_distance		= 0
 _gravity				= 0.3
 _move_speed				= 4
 _jump_height			= 7
-_can_jump				= 0;
+_jump_buffer			= 0		// Jump buffer
