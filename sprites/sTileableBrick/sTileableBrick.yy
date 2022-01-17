@@ -8,14 +8,14 @@
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
   "bbox_left": 0,
-  "bbox_right": 511,
+  "bbox_right": 415,
   "bbox_top": 0,
-  "bbox_bottom": 511,
+  "bbox_bottom": 415,
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 512,
-  "height": 512,
+  "width": 416,
+  "height": 416,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"5fb5c1c6-9aad-4dcc-aa3d-1827c9a1fd3b","path":"sprites/sClouds/sClouds.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"5fb5c1c6-9aad-4dcc-aa3d-1827c9a1fd3b","path":"sprites/sClouds/sClouds.yy",},"LayerId":{"name":"a6f0124d-2a32-41fb-ae99-4d3107f49a88","path":"sprites/sClouds/sClouds.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sClouds","path":"sprites/sClouds/sClouds.yy",},"resourceVersion":"1.0","name":"5fb5c1c6-9aad-4dcc-aa3d-1827c9a1fd3b","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"4443a14d-489e-4896-a8a2-245bbc370811","path":"sprites/sTileableBrick/sTileableBrick.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"4443a14d-489e-4896-a8a2-245bbc370811","path":"sprites/sTileableBrick/sTileableBrick.yy",},"LayerId":{"name":"15741822-0541-485e-aee5-c725de5b79c1","path":"sprites/sTileableBrick/sTileableBrick.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sTileableBrick","path":"sprites/sTileableBrick/sTileableBrick.yy",},"resourceVersion":"1.0","name":"4443a14d-489e-4896-a8a2-245bbc370811","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"sClouds","path":"sprites/sClouds/sClouds.yy",},
+    "spriteId": {"name":"sTileableBrick","path":"sprites/sTileableBrick/sTileableBrick.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"4d035402-410b-48a4-8e59-3e94c8d97138","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"5fb5c1c6-9aad-4dcc-aa3d-1827c9a1fd3b","path":"sprites/sClouds/sClouds.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"3400cbd0-08b1-4d4f-8560-ebafcf284c39","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"4443a14d-489e-4896-a8a2-245bbc370811","path":"sprites/sTileableBrick/sTileableBrick.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
@@ -58,14 +58,14 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"sClouds","path":"sprites/sClouds/sClouds.yy",},
+    "parent": {"name":"sTileableBrick","path":"sprites/sTileableBrick/sTileableBrick.yy",},
     "resourceVersion": "1.3",
-    "name": "sClouds",
+    "name": "sTileableBrick",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"a6f0124d-2a32-41fb-ae99-4d3107f49a88","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"15741822-0541-485e-aee5-c725de5b79c1","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
@@ -73,7 +73,7 @@
     "path": "folders/Sprites.yy",
   },
   "resourceVersion": "1.0",
-  "name": "sClouds",
+  "name": "sTileableBrick",
   "tags": [],
   "resourceType": "GMSprite",
 }
