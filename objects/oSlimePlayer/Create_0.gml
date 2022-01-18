@@ -25,3 +25,7 @@ _buffer_max		= 4
 
 _horizontal_distance	= 0		// The amount of pixels to move horizontally, negative for left, positive for right.
 _vertical_distance		= 0		// The amount of pixels to move vertically, negative for up, positive for down.
+
+_dash_frames = 0
+_dash_frames_max = 60
+_dash_speed = 20
