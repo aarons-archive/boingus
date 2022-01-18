@@ -33,8 +33,22 @@ if (_dash_counter > 0) { _is_dashing = true} else { _is_dashing = false }
 ////////////////////////////
 // Distance calculations //
 //////////////////////////
-_horizontal_distance = (_right_key - _left_key) * _move_speed
-_vertical_distance += _gravity
+
+if (not _on_ground and keyboard_check_pressed(ord("F"))) {
+	_dash_direction = (_right_key - _left_key)
+	_dash_counter = _dash_max
+}
+if (_dash_counter > 0) {
+	
+	_dash_counter -= 1
+
+	if (not _on_ground) {
+		_horizontal_distance = _dash_direction * _dash_speed
+	}
+} else {
+	_horizontal_distance = (_right_key - _left_key) * _move_speed
+	_vertical_distance += _gravity
+}
 
 
 //////////////////
@@ -56,8 +70,6 @@ else if (_coyote_counter > 0) {
 
 	}	
 }
-
-
 /////////////////////
 // Buffer jumping //
 ///////////////////
