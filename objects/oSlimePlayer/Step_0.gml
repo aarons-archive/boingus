@@ -33,16 +33,13 @@ if (_dash_counter > 0) { _is_dashing = true} else { _is_dashing = false }
 ////////////////////////////
 // Distance calculations //
 //////////////////////////
-
 _horizontal_distance = (_right_key - _left_key) * _move_speed
 _vertical_distance += _gravity
 
 
-//////////////
-// Jumping //
-////////////
-
-// Coyote time
+//////////////////
+// Coyote time //
+////////////////
 if (_on_ground) {
 	_jumped = false
 	_coyote_counter = _coyote_max
@@ -59,6 +56,7 @@ else if (_coyote_counter > 0) {
 
 	}	
 }
+
 
 /////////////////////
 // Buffer jumping //
