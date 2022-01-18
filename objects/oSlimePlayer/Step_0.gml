@@ -13,14 +13,32 @@ else if (_pause_key and global.paused) {
 	global.paused = false
 }
 
+//////////////
+// Dashing //
+////////////
+
+if (_dash_frames > 0) {
+	_dash_frames -= 1
+}
+if (keyboard_check_pressed(ord("F"))) {
+	_dash_frames = _dash_max_frames
+} 
+
 
 ////////////////////////////
 // Distance calculations //
 //////////////////////////
 _left_key = keyboard_check(ord("A"))
 _right_key = keyboard_check(ord("D"))
+	
+var _movement
+if (_dash_frames > 0) {
+	_movement = _dash_speed
+} else {
+	_movement = _move_speed
+}
 
-_horizontal_distance = (_right_key - _left_key) * _move_speed
+_horizontal_distance = (_right_key - _left_key) * _movement
 _vertical_distance += _gravity
 
 
