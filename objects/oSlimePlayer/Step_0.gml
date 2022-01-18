@@ -2,85 +2,80 @@
 
 
 ///////////////////////////
-// Pausing and Resuming //
+// Pause, Resume, Reset //
 /////////////////////////
-_pause_key = keyboard_check_pressed(vk_escape)
+var _pause_key = keyboard_check_pressed(vk_escape)
 
+// Pause if not paused
 if (_pause_key and not global.paused) {
 	global.paused = true
 } 
+// Resume if paused
 else if (_pause_key and global.paused) {
 	global.paused = false
 }
-
-//////////////
-// Dashing //
-////////////
-
-if (_dash_frames > 0) {
-	_dash_frames -= 1
+// Reset game
+else if (keyboard_check_pressed(ord("R"))) {
+	game_restart()
 }
-if (keyboard_check_pressed(ord("F"))) {
-	_dash_frames = _dash_max_frames
-} 
+
+
+////////////
+// Setup //
+//////////
+var _left_key = keyboard_check(ord("A"))
+var _right_key = keyboard_check(ord("D"))
+
+if (place_meeting(x, y + 1, oInvisibleWall)) { _on_ground = true} else { _on_ground = false }
+if (_dash_counter > 0) { _is_dashing = true} else { _is_dashing = false }
 
 
 ////////////////////////////
 // Distance calculations //
 //////////////////////////
-_left_key = keyboard_check(ord("A"))
-_right_key = keyboard_check(ord("D"))
-	
-var _movement
-if (_dash_frames > 0) {
-	_movement = _dash_speed
-} else {
-	_movement = _move_speed
-}
 
-_horizontal_distance = (_right_key - _left_key) * _movement
+_horizontal_distance = (_right_key - _left_key) * _move_speed
 _vertical_distance += _gravity
 
 
 //////////////
 // Jumping //
 ////////////
-if (place_meeting(x, y + 1, oInvisibleWall)) {
-	_on_ground = true
-} else {
-	_on_ground = false
-}
 
 // Coyote time
-if (not _on_ground) {
-	
-	if (_coyote_counter > 0) {
-		
-		_coyote_counter -= 1
-	
-		if (not _jumped and keyboard_check_pressed(vk_space)) {
-			_vertical_distance = -_jump_height
-			_jumped = true
-		}
-		
-	}
-} else {
+if (_on_ground) {
 	_jumped = false
 	_coyote_counter = _coyote_max
+} 
+else if (_coyote_counter > 0) {
+	
+	_coyote_counter -= 1
+	
+	if (not _jumped and keyboard_check_pressed(vk_space)) {
+		_coyote_counter = 0
+		_jumped = true
+		
+		_vertical_distance = -_jump_height
+
+	}	
 }
 
-// Jump buffer
+/////////////////////
+// Buffer jumping //
+///////////////////
 if (keyboard_check_pressed(vk_space)) {
 	_buffer_counter = _buffer_max
 }
+
 if (_buffer_counter > 0) {
 	
 	_buffer_counter -= 1
 
 	if (_on_ground) {
-		_vertical_distance = -_jump_height
 		_buffer_counter = 0
 		_jumped = true
+		
+		_vertical_distance = -_jump_height	
 	}
 }
 
@@ -111,7 +106,6 @@ y += _vertical_distance
 /////////////////
 // Animations //
 ///////////////
-
 if (_horizontal_distance != 0) {
 	sprite_index = sSlimeMoving
 	image_xscale = _right_key - _left_key
