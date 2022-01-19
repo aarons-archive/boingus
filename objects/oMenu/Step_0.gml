@@ -14,7 +14,12 @@ var menu_height = ds_grid_height(menu)	// Get the amount of elements in the menu
 if (inputting) {
 	switch (menu[# 1, selected_elements[page]]) {
 		case element.shift:
-			break
+			var hinput = keyboard_check_pressed(vk_right) - keyboard_check_pressed(vk_left);
+			if (hinput != 0) {
+				menu[# 3, selected_elements[page]] += hinput;
+				menu[# 3, selected_elements[page]] = clamp(menu[# 3, selected_elements[page]], 0, array_length(menu[# 4, selected_elements[page]]) - 1);
+			}
+			break;
 		case element.slider:
 			break
 		case element.toggle:

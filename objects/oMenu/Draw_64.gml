@@ -4,83 +4,91 @@ if (not global.paused) {
 	exit
 }
 
-var menu_colour = $36393f
-var menu_selected_colour = $5865f2
-var menu_option_colour = $4752c4
-var menu = menus[page]					// Get the current menu page.
-var menu_height = ds_grid_height(menu)	// Get the amount of elements in the menu page.
+draw_set_font(fMenu)
 
+var menu = menus[page]
+var menu_height = ds_grid_height(menu)
 
-/////////////////////
-// Main rectangle //
-///////////////////
-var menu_x1 = view_width / 5
-var menu_y1 = view_height / 5
-var menu_x2 = view_width - (view_width / 5)
-var menu_y2 = view_height - (view_height / 5)
+var element_name_start_x = 20
+var element_name_start_y = 20
+var element_name_x_offset = 30
+var element_name_y_offset = 80
 
-for (var i = 0; i < 5; i += 1) {
-	draw_set_alpha(i / 10)
-	draw_roundrect_color(
-		menu_x1 + i, menu_y1 - i, 
-		menu_x2 + i, menu_y2 - i, 
-		menu_colour, menu_colour, 
-		false
-	)
-}
+var x2 = view_width - ((view_width / 3) * 2)
+var y2 = element_name_start_y + (menu_height * element_name_y_offset)
 
-draw_set_alpha(1)
-draw_roundrect_color(
-	menu_x1, menu_y1, 
-	menu_x2, menu_y2, 
-	menu_colour, menu_colour, 
+draw_rectangle_color(
+	0, 0, 
+	x2, y2, 
+	c_black, c_black, 
+	c_black, c_black, 
 	false
 )
 
-
-/////////////////
-// Menu names //
-///////////////
-draw_set_font(fMenu)
-draw_set_halign(fa_right)	// x, y will be on the right.
-draw_set_valign(fa_middle)	// x, y will be in the middle.
-
-var menu_name_x_offset
-var menu_name_y_offset	= 75
-var menu_name_start_x	= (view_width / 2) - 100
-var menu_name_start_y	= (view_height / 2) - (((menu_height - 1) / 2) * menu_name_y_offset)       
-
 for (var i = 0; i < menu_height; i++) {
+	
+	var _x_offset
 
-	if (selected_elements[page] == i) {
-		menu_name_x_offset = 30 
-		draw_set_color(menu_selected_colour)
-		draw_arrow(
-			menu_name_start_x, 
-			menu_name_start_y + (i * menu_name_y_offset),
-			menu_name_start_x - menu_name_x_offset + 10, 
-			menu_name_start_y + (i * menu_name_y_offset), 
-			100
+	if (i == selected_elements[page]) {
+		_x_offset = element_name_x_offset
+		draw_set_color(c_white)
+		
+		draw_sprite(
+			sArrow, 
+			-1,
+			element_name_start_x,
+			element_name_start_y + (i * element_name_y_offset) + 5, 
 		)
-	} else {
-		menu_name_x_offset = 0
-		draw_set_color(menu_option_colour)
+	} 
+	else {
+		_x_offset = 0
+		draw_set_color(c_red)
 	}
 	
-	draw_text_transformed(
-		menu_name_start_x - menu_name_x_offset, 
-		menu_name_start_y + (i * menu_name_y_offset), 
+	draw_text(
+		element_name_start_x + _x_offset, 
+		element_name_start_y + (i * element_name_y_offset), 
 		menu[# 0, i], 
-		1, 1, 0
 	)
 }
 
+/*
+draw_set_color(c_white)
+draw_line(
+	(x2 / 3) + element_name_x_offset, 
+	element_name_start_y, 
+	(x2 / 3) + element_name_x_offset, 
+	y2 - element_name_start_y
+)
 
-////////////////////
-// Dividing line //
-//////////////////
-
-
-/////////////////
-// Menu items //
-///////////////
+for (var i = 0; i < menu_height; i++) {
+	switch (menu[# 1, i]) {
+		
+		case element.shift:
+			var current_value = menu[# 3, i];
+			var current_array = menu[# 4, i];
+			var left_shift = "<< ";
+			var right_shift = " >>";
+			
+			if (current_value == 0) {
+				left_shift = "";
+			}
+			if (current_value == array_length(menu[# 4, i]) - 1) {
+				right_shift = "";
+			}
+			
+			c = c_white;			
+			if (inputting and i == selected_elements[page]) {
+				c = c_yellow;
+			}
+			
+			draw_text_color(
+				(x2 / 3) + (element_name_x_offset * 2), 
+				element_name_start_y,
+				left_shift + current_array[current_value] + right_shift, 
+				c, c, c, c, 1
+			);
+			break;	
+	}
+}
+*/
