@@ -25,51 +25,58 @@ else if (keyboard_check_pressed(ord("R"))) {
 //////////
 var _left_key = keyboard_check(ord("A"))
 var _right_key = keyboard_check(ord("D"))
+var _direction = (_right_key - _left_key)
 
 if (place_meeting(x, y + 1, oInvisibleWall)) { _on_ground = true} else { _on_ground = false }
-if (_dash_counter > 0) { _is_dashing = true} else { _is_dashing = false }
 
 
-////////////////////////////
-// Distance calculations //
-//////////////////////////
-
-if (not _on_ground and keyboard_check_pressed(ord("F"))) {
-	_dash_direction = (_right_key - _left_key)
+///////////
+// Dash //
+/////////
+if (keyboard_check_pressed(ord("F")) and _direction != 0) {
+	_dash_direction = _direction
 	_dash_counter = _dash_max
-}
+} 
+
+
+///////////////
+// Movement //
+/////////////
 if (_dash_counter > 0) {
+	_horizontal_distance = _dash_direction * _dash_speed
+	_vertical_distance = 0
 	
 	_dash_counter -= 1
-
-	if (not _on_ground) {
-		_horizontal_distance = _dash_direction * _dash_speed
-	}
-} else {
-	_horizontal_distance = (_right_key - _left_key) * _move_speed
+} 
+else {
+	_horizontal_distance = _direction * _move_speed
 	_vertical_distance += _gravity
+	
+	_dash_direction = 0
 }
 
 
 //////////////////
 // Coyote time //
-////////////////
+/////////////////
 if (_on_ground) {
 	_jumped = false
 	_coyote_counter = _coyote_max
-} 
-else if (_coyote_counter > 0) {
+}
+
+if (_coyote_counter > 0) {	
 	
 	_coyote_counter -= 1
 	
-	if (not _jumped and keyboard_check_pressed(vk_space)) {
+	if (keyboard_check_pressed(vk_space) and not _jumped) {
 		_coyote_counter = 0
 		_jumped = true
 		
 		_vertical_distance = -_jump_height
-
 	}	
 }
+
+
 /////////////////////
 // Buffer jumping //
 ///////////////////
@@ -90,11 +97,9 @@ if (_buffer_counter > 0) {
 }
 
 
-/////////////////
-// Collisions //
-///////////////
-
-// Horizontal
+////////////////////////////
+// Horizontal collisions //
+//////////////////////////
 if (place_meeting(x + _horizontal_distance, y, oInvisibleWall)) {
 	while (not place_meeting(x + sign(_horizontal_distance), y, oInvisibleWall)) {
 		x += sign(_horizontal_distance)
@@ -103,7 +108,10 @@ if (place_meeting(x + _horizontal_distance, y, oInvisibleWall)) {
 }
 x += _horizontal_distance
 
-// Vertical
+
+//////////////////////////
+// Vertical collisions //
+////////////////////////
 if (place_meeting(x, y + _vertical_distance, oInvisibleWall)) {
 	while (not place_meeting(x, y + sign(_vertical_distance), oInvisibleWall)) {
 		y += sign(_vertical_distance)
@@ -111,14 +119,3 @@ if (place_meeting(x, y + _vertical_distance, oInvisibleWall)) {
 	_vertical_distance = 0
 }
 y += _vertical_distance
-
-
-/////////////////
-// Animations //
-///////////////
-if (_horizontal_distance != 0) {
-	sprite_index = sSlimeMoving
-	image_xscale = _right_key - _left_key
-} else {
-	sprite_index = sSlimeIdleSpecial
-}
