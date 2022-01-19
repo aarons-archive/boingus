@@ -1,18 +1,15 @@
 {
   "spriteId": {
-    "name": "sSlimeIdle",
-    "path": "sprites/sSlimeIdle/sSlimeIdle.yy",
+    "name": "sSlimeBlock",
+    "path": "sprites/sSlimeBlock/sSlimeBlock.yy",
   },
   "solid": false,
   "visible": true,
-  "spriteMaskId": {
-    "name": "sSlimeIdle",
-    "path": "sprites/sSlimeIdle/sSlimeIdle.yy",
-  },
+  "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "oPlayer",
-    "path": "objects/oPlayer/oPlayer.yy",
+    "name": "oSolid",
+    "path": "objects/oSolid/oSolid.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -34,7 +31,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oSlimePlayer",
+  "name": "oSlimeBlock",
   "tags": [],
   "resourceType": "GMObject",
 }
