@@ -4,6 +4,7 @@
     {"id":{"name":"fMenu","path":"fonts/fMenu/fMenu.yy",},"order":0,},
     {"id":{"name":"sTileableBrick","path":"sprites/sTileableBrick/sTileableBrick.yy",},"order":3,},
     {"id":{"name":"sSlimeIdle","path":"sprites/sSlimeIdle/sSlimeIdle.yy",},"order":0,},
+    {"id":{"name":"tsCobblestone","path":"tilesets/tsCobblestone/tsCobblestone.yy",},"order":0,},
     {"id":{"name":"change_resolution","path":"scripts/change_resolution/change_resolution.yy",},"order":8,},
     {"id":{"name":"sInvisibleWall","path":"sprites/sInvisibleWall/sInvisibleWall.yy",},"order":4,},
     {"id":{"name":"resume_game","path":"scripts/resume_game/resume_game.yy",},"order":4,},
@@ -15,6 +16,7 @@
     {"id":{"name":"change_difficulty","path":"scripts/change_difficulty/change_difficulty.yy",},"order":7,},
     {"id":{"name":"exit_game","path":"scripts/exit_game/exit_game.yy",},"order":5,},
     {"id":{"name":"change_volume","path":"scripts/change_volume/change_volume.yy",},"order":6,},
+    {"id":{"name":"sCobblestone","path":"sprites/sCobblestone/sCobblestone.yy",},"order":5,},
     {"id":{"name":"oInvisibleWall","path":"objects/oInvisibleWall/oInvisibleWall.yy",},"order":2,},
     {"id":{"name":"change_window_mode","path":"scripts/change_window_mode/change_window_mode.yy",},"order":9,},
     {"id":{"name":"Level1","path":"rooms/Level1/Level1.yy",},"order":0,},
@@ -42,6 +44,7 @@
     {"folderPath":"folders/Rooms.yy","order":0,"resourceVersion":"1.0","name":"Rooms","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Scripts.yy","order":4,"resourceVersion":"1.0","name":"Scripts","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Fonts.yy","order":5,"resourceVersion":"1.0","name":"Fonts","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Tilesets.yy","order":6,"resourceVersion":"1.0","name":"Tilesets","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},
