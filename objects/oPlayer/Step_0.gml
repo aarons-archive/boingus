@@ -96,13 +96,26 @@ function do_jump() {
 		if (_on_ground) {
 			_buffer_counter = 0
 			_jumped = true
-		
+			
 			_vertical_distance = -_jump_height	
 		}
 	}
 }
 
 do_jump()
+
+
+/////////////////////
+// Double jumping //
+///////////////////
+if (_on_ground) {
+	_double_jumped = false
+} 
+else if (keyboard_check_pressed(vk_space) and not _on_ground and _jumped and not _double_jumped) {
+	_jumped = true
+	_double_jumped = true
+	_vertical_distance = -_jump_height	
+} 
 
 
 ////////////////////////////

@@ -8,6 +8,7 @@ _jump_height	= 8		// Amount of pixels to move up by when jumping.
 _gravity		= 0.3	// Amount of pixels to move down by when falling.
 _on_ground		= false // Whether the player is currently on the ground or not.
 _jumped			= true  // Whether or not the player has jumped.
+_double_jumped	= true  // Whether or not the player has double jumped.
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
