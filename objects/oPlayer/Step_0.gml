@@ -60,45 +60,49 @@ else {
 }
 
 
-//////////////////
-// Coyote time //
-/////////////////
-if (_on_ground) {
-	_jumped = false
-	_coyote_counter = _coyote_max
-}
-
-if (_coyote_counter > 0) {	
-	
-	_coyote_counter -= 1
-	
-	if (keyboard_check_pressed(vk_space) and not _jumped) {
-		_coyote_counter = 0
-		_jumped = true
-		
-		_vertical_distance = -_jump_height
-	}	
-}
-
-
-/////////////////////
-// Buffer jumping //
-///////////////////
-if (keyboard_check_pressed(vk_space)) {
-	_buffer_counter = _buffer_max
-}
-
-if (_buffer_counter > 0) {
-	
-	_buffer_counter -= 1
-
+function do_jump() {
+	//////////////////
+	// Coyote time //
+	/////////////////
 	if (_on_ground) {
-		_buffer_counter = 0
-		_jumped = true
+		_jumped = false
+		_coyote_counter = _coyote_max
+	}
+
+	if (_coyote_counter > 0) {	
+	
+		_coyote_counter -= 1
+	
+		if (keyboard_check_pressed(vk_space) and not _jumped) {
+			_coyote_counter = 0
+			_jumped = true
 		
-		_vertical_distance = -_jump_height	
+			_vertical_distance = -_jump_height
+		}	
+	}
+
+
+	/////////////////////
+	// Buffer jumping //
+	///////////////////
+	if (keyboard_check_pressed(vk_space)) {
+		_buffer_counter = _buffer_max
+	}
+
+	if (_buffer_counter > 0) {
+	
+		_buffer_counter -= 1
+
+		if (_on_ground) {
+			_buffer_counter = 0
+			_jumped = true
+		
+			_vertical_distance = -_jump_height	
+		}
 	}
 }
+
+do_jump()
 
 
 ////////////////////////////
@@ -123,3 +127,12 @@ if (place_meeting(x, y + _vertical_distance,  oSolid)) {
 	_vertical_distance = 0
 }
 y += _vertical_distance
+
+
+/////////////////
+// Animations //
+///////////////
+
+if (_direction != 0) {
+	image_xscale = sign(_direction)
+}
