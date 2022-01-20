@@ -1,5 +1,9 @@
 /// @description Core logic
 
+if (global.health <= 0) {
+	game_restart()
+}
+
 
 ///////////////////////////
 // Pause, Resume, Reset //
@@ -17,6 +21,10 @@ else if (_pause_key and global.paused) {
 // Reset game
 else if (keyboard_check_pressed(ord("R"))) {
 	game_restart()
+}
+
+if (global.paused) {
+	exit
 }
 
 

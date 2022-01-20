@@ -1,14 +1,16 @@
 /// @description Menu drawing
 
+// Healthbar
+var percentage = (global.health / global.max_health) * 100
+draw_healthbar(
+	view_width - 200,	0, 
+	view_width,			40,
+	percentage,
+	c_black, c_red, c_lime,
+	0, true, true
+)
+	
 if (not global.paused) {
-	var percentage = (global.health / global.max_health) * 100
-	draw_healthbar(
-		view_width - 100, 0, 
-		view_width, 20,
-		percentage,
-		c_black, c_red, c_lime,
-		0, true, true
-	)
 	exit
 }
 
