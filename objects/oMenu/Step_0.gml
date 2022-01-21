@@ -13,18 +13,18 @@ var menu_height = ds_grid_height(menu)	// Get the amount of elements in the menu
 
 if (inputting) {
 	switch (menu[# 1, selected_elements[page]]) {
-		case element.shift:
+		case element_type.SHIFT:
 			var hinput = keyboard_check_pressed(vk_right) - keyboard_check_pressed(vk_left);
 			if (hinput != 0) {
 				menu[# 3, selected_elements[page]] += hinput;
 				menu[# 3, selected_elements[page]] = clamp(menu[# 3, selected_elements[page]], 0, array_length(menu[# 4, selected_elements[page]]) - 1);
 			}
 			break;
-		case element.slider:
+		case element_type.SLIDER:
 			break
-		case element.toggle:
+		case element_type.TOGGLE:
 			break
-		case element.input:
+		case element_type.INPUT:
 			break
 	}
 } else {
@@ -43,22 +43,22 @@ if (enter_key) {
 	
 	switch (menu[# 1, selected_elements[page]]) {
 		
-		case element.run_script:
+		case element_type.RUN_SCRIPT:
 			script_execute(menu[# 2, selected_elements[page]])
 			break
-		case element.change_page:
+		case element_type.CHANGE_PAGE:
 			page = menu[# 2, selected_elements[page]]
 			break
 
-		case element.shift:
-		case element.slider:
-		case element.toggle:
+		case element_type.SHIFT:
+		case element_type.SLIDER:
+		case element_type.TOGGLE:
 			if (inputting) {
 				script_execute(menu[# 2, selected_elements[page]], menu[# 3, selected_elements[page]])
 			}
 			break
 			
-		case element.input:
+		case element_type.INPUT:
 			inputting = not inputting
 			break
 	}

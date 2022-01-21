@@ -1,7 +1,7 @@
 /// @description Core logic
 
 if (global.health <= 0) {
-	game_restart()
+	exit_level()
 }
 
 

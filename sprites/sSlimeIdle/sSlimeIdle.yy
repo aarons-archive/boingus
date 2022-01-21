@@ -192,8 +192,8 @@
     "resourceType": "GMNineSliceData",
   },
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Players",
+    "path": "folders/Sprites/Players.yy",
   },
   "resourceVersion": "1.0",
   "name": "sSlimeIdle",

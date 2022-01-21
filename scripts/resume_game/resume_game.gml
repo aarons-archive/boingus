@@ -1,3 +1,3 @@
-function resume_game(){
+function resume_game() {
 	global.paused = false
 }

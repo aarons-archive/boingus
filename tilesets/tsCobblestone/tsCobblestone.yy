@@ -170,7 +170,7 @@
   },
   "parent": {
     "name": "Tilesets",
-    "path": "folders/Tilesets.yy",
+    "path": "folders/Sprites/Tilesets.yy",
   },
   "resourceVersion": "1.0",
   "name": "tsCobblestone",

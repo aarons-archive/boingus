@@ -1,56 +1,31 @@
 /// @description Create variables
 
 
-////////////
-// Enums //
-//////////
-enum pages {
-	main,
-	settings,
-	audio, 
-	difficulty,
-	graphics,
-}
-
-enum element {
-	run_script,
-	change_page,
-	slider,
-	shift,
-	toggle,
-	input,
-}
-
-
 ///////////////////
 // Create menus //
 /////////////////
-ds_main_menu = create_menu([
-	["RESUME",		element.run_script,		resume_game							],
-	["RESTART",     element.run_script,     restart_game						],
-	// ["SETTINGS",	element.change_page,	pages.settings						],
-	["EXIT",		element.run_script,		exit_game							],
+ds_menu = create_menu([
+	["RESUME",		element_type.RUN_SCRIPT,	resume_game					],
+	["RESTART",     element_type.RUN_SCRIPT,    restart_level				],
+	["EXIT",		element_type.RUN_SCRIPT,    exit_level,					],
+	["SETTINGS",	element_type.CHANGE_PAGE,	pages.MENU_SETTINGS			],
+	["QUIT",		element_type.RUN_SCRIPT,	quit_game					],
 
 ])
-ds_settings_menu = create_menu([
-	["SOUNDS",		element.slider,			undefined,			0.5,		[0, 1]						],
-	["DIFFICULTY",	element.shift,			undefined,			0,			["EASY", "MEDIUM", "HARD"]	],
-	["WINDOW MODE", element.toggle,			undefined,			1,			["FULLSCREEN", "WINDOWED"]	],
-	["BACK",		element.change_page,	pages.main,			undefined,	undefined					],
+ds_menu_settings = create_menu([
+	["DIFFICULTY",	element_type.SHIFT,			undefined,			0,			["EASY", "MEDIUM", "HARD"]	],
+	["BACK",		
+	element_type.CHANGE_PAGE,	pages.MENU,			undefined,	undefined					],
 ])
 
-
-///////////
-// Vars //
-/////////
 global.paused = false
 inputting = false
 
 view_width = camera_get_view_width(view_camera[0])
 
 menus = [
-	ds_main_menu,
-	ds_settings_menu,
+	ds_menu,
+	ds_menu_settings,
 ]
 page = 0
 for (var i = 0; i < array_length(menus); i++) {
