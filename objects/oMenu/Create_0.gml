@@ -14,8 +14,7 @@ ds_menu = create_menu([
 ])
 ds_menu_settings = create_menu([
 	["DIFFICULTY",	element_type.SHIFT,			undefined,			0,			["EASY", "MEDIUM", "HARD"]	],
-	["BACK",		
-	element_type.CHANGE_PAGE,	pages.MENU,			undefined,	undefined					],
+	["BACK",		element_type.CHANGE_PAGE,	pages.MENU,			undefined,	undefined					],
 ])
 
 global.paused = false

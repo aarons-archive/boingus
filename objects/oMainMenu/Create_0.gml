@@ -18,6 +18,11 @@ enum pages {
 	MENU,
 	MENU_SETTINGS,
 }
+enum game_difficulty {
+	EASY,
+	MEDIUM,
+	HARD,
+}
 
 ds_menu = create_menu([
 	["PLAY",		element_type.RUN_SCRIPT,	start_game					],
@@ -25,17 +30,19 @@ ds_menu = create_menu([
 	["QUIT",		element_type.RUN_SCRIPT,	quit_game					],
 ])
 ds_menu_settings = create_menu([
-	["DIFFICULTY",	element_type.SHIFT,			undefined,			0,			["EASY", "MEDIUM", "HARD"]	],
+	["DIFFICULTY",	element_type.SHIFT,			change_difficulty,	0,			["EASY", "MEDIUM", "HARD"]	],
 	["BACK",		element_type.CHANGE_PAGE,	pages.MAIN_MENU,	undefined,	undefined					],
 ])
-
 
 menu_pages = [
 	ds_menu,
 	ds_menu_settings,
 ]
 menu_page = 0
+menu_inputting = false
 
 for (var i = 0; i < array_length(menu_pages); i++) {
 	menu_selected_elements[i] = 0
 }
+
+global.difficulty = game_difficulty.EASY
