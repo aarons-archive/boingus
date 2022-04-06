@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sFKey","path":"sprites/sFKey/sFKey.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sFKey",
     "tags": [],
     "resourceType": "GMSequence",

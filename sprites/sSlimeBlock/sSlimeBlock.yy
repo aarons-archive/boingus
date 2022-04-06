@@ -138,7 +138,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sSlimeBlock","path":"sprites/sSlimeBlock/sSlimeBlock.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sSlimeBlock",
     "tags": [],
     "resourceType": "GMSequence",

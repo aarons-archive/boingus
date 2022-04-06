@@ -158,7 +158,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sSlimeIdle","path":"sprites/sSlimeIdle/sSlimeIdle.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sSlimeIdle",
     "tags": [],
     "resourceType": "GMSequence",

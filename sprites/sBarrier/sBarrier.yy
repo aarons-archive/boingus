@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sBarrier","path":"sprites/sBarrier/sBarrier.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sBarrier",
     "tags": [],
     "resourceType": "GMSequence",

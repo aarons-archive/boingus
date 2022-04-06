@@ -138,7 +138,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sCobblestone","path":"sprites/sCobblestone/sCobblestone.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "sCobblestone",
     "tags": [],
     "resourceType": "GMSequence",
