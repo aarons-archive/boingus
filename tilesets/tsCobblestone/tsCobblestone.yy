@@ -1,25 +1,9 @@
 {
-  "spriteId": {
-    "name": "sCobblestone",
-    "path": "sprites/sCobblestone/sCobblestone.yy",
-  },
-  "tileWidth": 50,
-  "tileHeight": 50,
-  "tilexoff": 0,
-  "tileyoff": 0,
-  "tilehsep": 0,
-  "tilevsep": 0,
-  "spriteNoExport": true,
-  "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
-  },
-  "out_tilehborder": 2,
-  "out_tilevborder": 2,
-  "out_columns": 10,
-  "tile_count": 100,
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tsCobblestone",
   "autoTileSets": [
-    {"tiles":[
+    {"resourceType":"GMAutoTileSet","resourceVersion":"1.0","name":"autotile_1","closed_edge":false,"tiles":[
         12,
         15,
         14,
@@ -36,8 +20,8 @@
         21,
         23,
         24,
-      ],"closed_edge":false,"resourceVersion":"1.0","name":"autotile_1","tags":[],"resourceType":"GMAutoTileSet",},
-    {"tiles":[
+      ],},
+    {"resourceType":"GMAutoTileSet","resourceVersion":"1.0","name":"autotile_2","closed_edge":false,"tiles":[
         42,
         45,
         44,
@@ -54,10 +38,30 @@
         51,
         53,
         0,
-      ],"closed_edge":false,"resourceVersion":"1.0","name":"autotile_2","tags":[],"resourceType":"GMAutoTileSet",},
+      ],},
   ],
-  "tileAnimationFrames": [],
-  "tileAnimationSpeed": 15.0,
+  "macroPageTiles": {
+    "SerialiseHeight": 0,
+    "SerialiseWidth": 0,
+    "TileSerialiseData": [],
+  },
+  "out_columns": 10,
+  "out_tilehborder": 2,
+  "out_tilevborder": 2,
+  "parent": {
+    "name": "Tilesets",
+    "path": "folders/Sprites/Tilesets.yy",
+  },
+  "spriteId": {
+    "name": "sCobblestone",
+    "path": "sprites/sCobblestone/sCobblestone.yy",
+  },
+  "spriteNoExport": true,
+  "textureGroupId": {
+    "name": "Default",
+    "path": "texturegroups/Default",
+  },
+  "tile_count": 100,
   "tileAnimation": {
     "FrameData": [
       0,
@@ -163,17 +167,12 @@
     ],
     "SerialiseFrameCount": 1,
   },
-  "macroPageTiles": {
-    "SerialiseWidth": 0,
-    "SerialiseHeight": 0,
-    "TileSerialiseData": [],
-  },
-  "parent": {
-    "name": "Tilesets",
-    "path": "folders/Sprites/Tilesets.yy",
-  },
-  "resourceVersion": "1.0",
-  "name": "tsCobblestone",
-  "tags": [],
-  "resourceType": "GMTileSet",
+  "tileAnimationFrames": [],
+  "tileAnimationSpeed": 15.0,
+  "tileHeight": 50,
+  "tilehsep": 0,
+  "tilevsep": 0,
+  "tileWidth": 50,
+  "tilexoff": 0,
+  "tileyoff": 0,
 }
